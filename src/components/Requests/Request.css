@@ -1,0 +1,9 @@
+.container{
+	display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    grid-template-areas:
+    'main main main';
+    gap: 10px;
+}
