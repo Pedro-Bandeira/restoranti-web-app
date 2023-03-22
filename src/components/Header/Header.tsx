@@ -95,7 +95,7 @@ export const Header = () => {
             {/* <ListItemDecorator>
               <BubbleChartIcon />
             </ListItemDecorator> */}
-            Cadastro Mesas | Servicos
+            Cadastro Mesas
           </MenuItem>
           <ListDivider />
           <MenuItem onClick={() => setAnchorEl(null)}>Mesas Disponíveis</MenuItem>
