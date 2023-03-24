@@ -8,7 +8,7 @@ type RequestProps = {
 
 export const Request: React.FC<RequestProps> = ({ items }) => {
     return (
-        <div className="container">
+        <div className="container-requests">
             {items.map((item, index) => (
                 <RequestItem key={index} {...item} />
             ))}

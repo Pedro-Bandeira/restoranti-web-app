@@ -1,2 +1,5 @@
 export * from './Requests'
 export * from './Header'
+export * from './Sidebar'
+export * from './Navbar'
+export * from './Tables'

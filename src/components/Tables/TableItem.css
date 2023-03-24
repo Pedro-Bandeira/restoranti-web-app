@@ -1,0 +1,37 @@
+.TableItem{
+    background-Color: #3ea175;
+    border-radius: 10px; 
+    margin: 10px; 
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 350px;
+    height: 120px;
+}
+
+.TableItem-ocupado{
+    background-Color: #e65061;
+    border-radius: 10px; 
+    margin: 10px; 
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 350px;
+    height: 120px;
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .TableItem{
+        width: 250px;
+    }   
+    .TableItem-ocupado{
+        width: 250px;
+    }  
+}

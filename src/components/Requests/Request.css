@@ -1,9 +1,21 @@
-.container{
+.container-requests{
 	display: grid;
     align-items: center;
     justify-content: center;
-    width: 100%;
     grid-template-areas:
-    'main main main';
+    'item item item';
     gap: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .container-requests{
+        grid-template-areas:
+        'item item';
+    }
+}
+@media only screen and (max-width: 620px) {
+    .container-requests{
+        grid-template-areas:
+        'item';
+    }
 }

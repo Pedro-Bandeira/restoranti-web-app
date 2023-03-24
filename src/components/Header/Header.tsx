@@ -91,7 +91,7 @@ export const Header = () => {
             minWidth: 200,
           }}
         >
-          <MenuItem onClick={() => setAnchorEl(null)}>
+          <MenuItem onClick={(event) => setAnchorEl(event.currentTarget)} href={"/cadastros/cadastro-mesas"}>
             {/* <ListItemDecorator>
               <BubbleChartIcon />
             </ListItemDecorator> */}

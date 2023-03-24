@@ -8,8 +8,8 @@ export type RequestItemsProps = {
 export const RequestItem: React.FC<RequestItemsProps> = ({id, servico}) => {
     return(
         <div className="itemCard">
-            <h1 style={{gridArea: "mesa"}}>Mesa: {id}</h1>
-            <h2 style={{gridArea: "servico"}}>{servico}</h2>
+            <h2 style={{gridArea: "mesa", color: "#fff"}}>Mesa: {id}</h2>
+            <span style={{gridArea: "servico", fontSize: 20, color: "#fff"}}>{servico}</span>
             <button style={{gridArea: "confirm"}}>CONFIRMAR</button>
         </div>
     )

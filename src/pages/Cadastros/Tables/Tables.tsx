@@ -1,6 +1,8 @@
 export const Tables = () => {
   return (
-    <h1>Mesas</h1>
+    <div className="tables"> 
+      Mesas 
+    </div>
   )
 }
   

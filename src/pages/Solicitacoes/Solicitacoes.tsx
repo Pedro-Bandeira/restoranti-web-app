@@ -24,7 +24,7 @@ export const Solicitacoes = () => {
   }, [getAll])
 
   return (
-    <div className="App">
+    <div className="solicitacoes">
       <h1>Solicitações</h1>
       <Request items={requests}/>
     </div>
