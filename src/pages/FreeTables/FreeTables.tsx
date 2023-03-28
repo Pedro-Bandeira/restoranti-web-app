@@ -6,7 +6,6 @@ import './FreeTables.css'
 export const FreeTables = () => {
     const { mesas, getAll } = useMesas();
 
-
     let pollingTimeout: number | undefined;
     async function pollingRequests() {
       await getAll();
@@ -25,7 +24,7 @@ export const FreeTables = () => {
 
     return(
         <div className="freeTables">
-            <h1>Consulta Mesas</h1>
+            <h1>Gerenciar Mesas</h1>
             <TablesList items={mesas} />
         </div>
     )

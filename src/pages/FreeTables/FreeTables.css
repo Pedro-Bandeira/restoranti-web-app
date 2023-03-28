@@ -4,3 +4,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.freeTables h1 {
+    color: gray;
+}

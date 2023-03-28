@@ -1,17 +1,30 @@
 import './TableItem.css'
 
 export type MesaItemProps = {
-    id: number,
-    qtd_cadeiras: string,
-    status: string
+    tableNumber: number,
+    isAvailable: boolean
 }
 
-export const TableItem: React.FC<MesaItemProps> = ({id, qtd_cadeiras, status}) => {
+export const TableItem: React.FC<MesaItemProps> = ({tableNumber, isAvailable}) => {
+    function bookChange() {
+        if(isAvailable) {
+            alert(`Mesa ${tableNumber} ocupada com sucesso!`)
+        }
+        else{
+            alert(`Mesa ${tableNumber} está livre agora`)
+        }
+    }
+
     return(
-        <div className={status == 'ocupado' ? "TableItem-ocupado" : "TableItem"}>
-            <h2 style={{gridArea: "mesa", color: "#fff"}}>Mesa: {id}</h2>
-            <span style={{gridArea: "cadeiras", fontSize: 20, color: "#fff"}}>Cadeiras: {qtd_cadeiras}</span>
-            <span style={{gridArea: "status", fontSize: 20, color: "#fff"}}>Status: {status}</span>
+        <div className={isAvailable == false ? "TableItem-ocupado" : "TableItem"}>
+            <h2 style={{color: "#fff"}}>Mesa: {tableNumber}</h2>
+            <span style={{fontSize: 20, color: "#fff"}}>Status: {isAvailable == true ? "Disponível" : "Ocupado"}</span>
+            <button 
+            id={isAvailable == false ? "buttonBooked" : "buttonBooking"}
+            onClick={bookChange}
+            >
+                {isAvailable == false ? "DESOCUPAR" : "OCUPAR"}
+            </button>
         </div>
     )
 }

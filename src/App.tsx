@@ -1,6 +1,6 @@
 import './App.css'
 import { Header, Sidebar, Navbar } from './components'
-import {Solicitacoes, Employees, Servicos, Tables, FreeTables} from './pages'
+import {Solicitacoes, Employees, Servicos, Tables, FreeTables, Home, Registers} from './pages'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +12,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Home</div>
+      element: <Home />
     },
     {
       path: "/solicitacoes",
@@ -27,8 +27,12 @@ const App = () => {
       element: <FreeTables />
     },
     {
-      path: "/criar-tag-qrcode",
-      element: <div>Criar Tags e QR Codes</div>
+      path: "/gerar-tag-qrcode",
+      element: <div>Gerar Tags e QR Codes</div>
+    },
+    {
+      path: "/cadastros",
+      element: <Registers />
     }
   ])
 

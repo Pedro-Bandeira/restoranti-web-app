@@ -28,7 +28,7 @@ export const Sidebar = ({sidebarOpen, sidebarClose}) => {
                 </div>    
                 <div className="sidebar-link">
                     <i><FontAwesomeIcon icon={faList} /></i>
-                    <a href="/solicitacoes">Solicitacoes</a>
+                    <a href="/solicitacoes">Solicitações</a>
                 </div>    
                 <div className="sidebar-link">
                     <i><FontAwesomeIcon icon={faTable} /></i>
@@ -37,11 +37,11 @@ export const Sidebar = ({sidebarOpen, sidebarClose}) => {
                 <h2>ADMIN</h2>
                 <div className="sidebar-link">
                     <i><FontAwesomeIcon icon={faLayerGroup} /></i>
-                    <a href="">Gerar Tags NFC / QR Code</a>
+                    <a href="gerar-tag-qrcode">Gerar Tags NFC / QR Code</a>
                 </div>   
                 <div className="sidebar-link">
                     <i><FontAwesomeIcon icon={faFile} /></i>
-                    <a href="">Cadastros</a>
+                    <a href="/cadastros">Cadastros</a>
                 </div>   
                 <div className="sidebar-logout">
                     <i><FontAwesomeIcon icon={faPowerOff} /></i>

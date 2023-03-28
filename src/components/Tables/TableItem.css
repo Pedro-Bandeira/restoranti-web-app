@@ -1,3 +1,8 @@
+* {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+}
+
 .TableItem{
     background-Color: #3ea175;
     border-radius: 10px; 
@@ -11,6 +16,31 @@
     width: 350px;
     height: 120px;
 }
+
+.TableItem > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #daf1e7;
+    padding: 10px;
+    transition: 0.5s;
+}
+.TableItem > button:hover{
+    background-color: #f5bcc3;
+    scale: 1.05;
+}
+
+.TableItem-ocupado > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #f5bcc3;
+    padding: 10px;
+    transition: 0.5s;
+}
+.TableItem-ocupado > button:hover{
+    background-color: #daf1e7;
+    scale: 1.05;
+}
+
 
 .TableItem-ocupado{
     background-Color: #e65061;

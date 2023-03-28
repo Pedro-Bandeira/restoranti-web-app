@@ -11,7 +11,7 @@ export const Navbar = ({ sidebarOpen, openSidebar }) => {
 
             <div className="navbar-left">
                 <a href="/">Home</a>
-                <a href="/solicitacoes" className="active-link">Solicitacoes</a>
+                <a href="/solicitacoes" className="active-link">Solicitações</a>
                 <a href="/mesas">Mesas</a>
             </div>
 

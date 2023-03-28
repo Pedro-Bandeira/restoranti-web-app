@@ -1,0 +1,90 @@
+.Home{
+    display: grid;
+    grid-template-columns: 0.8fr repeat(1, 1fr);
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas: 
+    'header header'
+    'requestsNumber freeTables';
+    min-width: 100%;
+    gap: 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    .Home{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.welcome-session{
+    grid-area: header;
+    min-height: 50px;
+    font-size: 24px;
+    border-bottom: 1px solid lightgray;
+    min-width: 100%;
+    text-align: left;
+}
+
+.welcome-session > span {
+    font-weight: bolder;
+}
+
+.request-session {
+    grid-area: requestsNumber;
+    background-color: #265acc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.request-session > span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+}
+
+.request-session > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.freeTables-session {
+    grid-area: freeTables;
+    background-color: #265acc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.freeTables-session > span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+}
+
+.freeTables-session > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
