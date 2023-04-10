@@ -4,9 +4,10 @@
 
 .CreateTagQrCode {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 50px;
 }
 
 .qrCode {
@@ -33,9 +34,9 @@
     justify-content: flex-start;
     border: 1px solid lightgray;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 10px 5px 5px lightgray;;
+    box-shadow: 10px 5px 5px lightgray;
 }
 
 .buttons{
@@ -61,4 +62,57 @@
 .generateLink:hover {
     background-color:  #5a83dd;
     cursor: pointer;
+}
+
+.functions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20%;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectArea {
+    display: flex;
+    flex-direction: column;
+    width: 215px;
+    gap: 5px;
+}
+
+.selectArea > select {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2c5eca;
+    color: #fff;
+    font-family: roboto;
+    font-size: 1rem;
+    border: none;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .CreateTagQrCode {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .CreateTagQrCode {
+        padding: 0;
+    }
+    .listBox {
+        scale: 0.9;
+    }
+    .functions {
+        scale: 0.9;
+    }
 }

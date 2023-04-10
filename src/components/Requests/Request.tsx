@@ -10,7 +10,7 @@ export const Request: React.FC<RequestProps> = ({ items }) => {
     return (
         <div className="container-requests">
             {items.map((item, index) => (
-                <RequestItem key={index} {...item} />
+                <RequestItem requestId={item.id} key={index} {...item} />
             ))}
         </div>
     )
