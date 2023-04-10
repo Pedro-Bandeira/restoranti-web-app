@@ -1,15 +1,14 @@
 import { TablesList } from '../../components'
-import { useMesas } from '../../hooks'
+import { useTables } from '../../hooks'
 import { useEffect } from 'react';
 import './FreeTables.css'
 
 export const FreeTables = () => {
-    const { mesas, getAll } = useMesas();
+    const { tables, getAll } = useTables();
 
     let pollingTimeout: number | undefined;
     async function pollingRequests() {
       await getAll();
-  
       pollingTimeout = setTimeout(() => pollingRequests(), 10000);
     }
   
@@ -19,13 +18,13 @@ export const FreeTables = () => {
       return () => {
         clearTimeout(pollingTimeout);
       }
-    }, [getAll])
 
+    }, [getAll])
 
     return(
         <div className="freeTables">
             <h1>Gerenciar Mesas</h1>
-            <TablesList items={mesas} />
+            {tables?.entity.length === 0 || tables?.entity === undefined ? <p>Carregando...</p> : <TablesList items={tables?.entity} /> } 
         </div>
     )
 }

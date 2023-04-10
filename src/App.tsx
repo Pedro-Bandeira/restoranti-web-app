@@ -1,9 +1,9 @@
 import './App.css'
 import { Header, Sidebar, Navbar } from './components'
-import {Solicitacoes, Employees, Servicos, Tables, FreeTables, Home, Registers} from './pages'
+import {Solicitacoes, Employees, Servicos, Tables, FreeTables, Home, Registers, CreateTagQrCode} from './pages'
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider
 } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -28,7 +28,7 @@ const App = () => {
     },
     {
       path: "/gerar-tag-qrcode",
-      element: <div>Gerar Tags e QR Codes</div>
+      element: <CreateTagQrCode />
     },
     {
       path: "/cadastros",

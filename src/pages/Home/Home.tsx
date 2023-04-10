@@ -1,25 +1,20 @@
 import './Home.css'
-import { useMesas } from '../../hooks'
-import { useEffect } from 'react';
+import { useTables, useRequests } from '../../hooks'
+import { useEffect, useState } from 'react';
 
 export const Home = () => {
 
-    const { getAll, freeTablesQuantity } = useMesas();
+    const { tables, getAll } = useTables();
+    const { requests, getAllRequests } = useRequests();
 
-    let pollingTimeout: number | undefined;
     async function pollingRequests() {
       await getAll();
-  
-      pollingTimeout = setTimeout(() => pollingRequests(), 10000);
+      await getAllRequests();
     }
   
     useEffect(() => {
       pollingRequests();
-  
-      return () => {
-        clearTimeout(pollingTimeout);
-      }
-    }, [getAll])
+    }, [])
 
     return(
         <div className="Home">
@@ -28,11 +23,11 @@ export const Home = () => {
             </div>
             <div className="request-session">
                 <h2>Quantidade de Solicitações</h2>
-                <span>6</span>
+                <span>{requests?.entity.length === 0 || requests?.entity === undefined ? <p>Carregando...</p> : requests?.entity.length }</span>
             </div>
             <div className="freeTables-session">
                 <h2>Quantidade de Mesas Livres</h2>
-                <span>{freeTablesQuantity}</span>
+                <span>{tables?.entity.length === 0 || tables?.entity === undefined ? <p>Carregando...</p> : tables?.entity.filter(available => available.isAvailable != false).length }</span>
             </div>
         </div>
     )

@@ -1,4 +1,6 @@
 import './TableItem.css'
+import { useTables } from '../../hooks'
+
 
 export type MesaItemProps = {
     tableNumber: number,
@@ -6,7 +8,11 @@ export type MesaItemProps = {
 }
 
 export const TableItem: React.FC<MesaItemProps> = ({tableNumber, isAvailable}) => {
-    function bookChange() {
+
+    const { bookATable } = useTables();
+
+    async function bookChange() {
+        await bookATable(tableNumber);
         if(isAvailable) {
             alert(`Mesa ${tableNumber} ocupada com sucesso!`)
         }

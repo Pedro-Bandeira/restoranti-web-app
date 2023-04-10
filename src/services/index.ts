@@ -1,2 +1,3 @@
 export * from './SolicitacoesService'
-export * from './MesasService'
+export * from './TablesService'
+export * from './UsersService'

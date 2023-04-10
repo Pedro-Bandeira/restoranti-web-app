@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import './Solicitacoes.css'
-import { useSolicitacoes } from '../../hooks'
+import { useRequests } from '../../hooks'
 import { Request } from '../../components'
 
 
 export const Solicitacoes = () => {
-  const { requests, getAll } = useSolicitacoes();
+  const { requests, getAllRequests } = useRequests();
 
 
   let pollingTimeout: number | undefined;
   async function pollingRequests() {
-    await getAll();
+    await getAllRequests();
 
     pollingTimeout = setTimeout(() => pollingRequests(), 10000);
   }
@@ -21,12 +21,12 @@ export const Solicitacoes = () => {
     return () => {
       clearTimeout(pollingTimeout);
     }
-  }, [getAll])
+  }, [getAllRequests])
 
   return (
     <div className="solicitacoes">
       <h1>Solicitações</h1>
-      <Request items={requests}/>
+      {requests?.entity.length === 0 || requests?.entity === undefined ? <p>Carregando...</p> : <Request items={requests?.entity} /> } 
     </div>
   )
 }

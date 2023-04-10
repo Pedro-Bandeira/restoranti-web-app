@@ -1,2 +1,3 @@
-export * from './useSolicitacoes';
-export * from './useMesas'
+export * from './useRequests';
+export * from './useTables'
+export * from './useUsers'

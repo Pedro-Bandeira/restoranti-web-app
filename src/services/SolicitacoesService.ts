@@ -1,8 +1,8 @@
-import { ISolicitacoes } from "../interfaces"
+import { IRootRequests } from "../interfaces"
 import { Api } from "../providers"
 
 
-const getAll = () => Api.get<ISolicitacoes[]>('solicitacoes?pendente=true')
+const getAll = () => Api.get<IRootRequests>('Request/Request/GetList')
 
 
 export const SolicitacoesService = {

@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react"
-import { ISolicitacoes } from "../interfaces";
+import { IRootRequests } from "../interfaces";
 import { SolicitacoesService } from "../services"
 
-export const useSolicitacoes = () => {
-    const [requests, setRequests] = useState<ISolicitacoes[]>([]);
+export const useRequests = () => {
+    const [requests, setRequests] = useState<IRootRequests>();
 
-    const getAll = useCallback(async () => {
+    const getAllRequests = useCallback(async () => {
         const { status, data } = await SolicitacoesService.getAll();
 
         if(status != 200) throw new Error();
@@ -16,6 +16,6 @@ export const useSolicitacoes = () => {
 
     return {
         requests,
-        getAll,
+        getAllRequests,
     }
 }

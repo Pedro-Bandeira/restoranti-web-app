@@ -79,6 +79,14 @@
     font-size: 18px;
 }
 
+.active_menu_link {
+    color: #3ea175;
+    border-bottom: 1px solid #3ea175;
+    padding: 7px;
+    background: rgba(62, 161, 117, 0.3);
+    border-radius: 3px;
+}
+
 .sidebar-logout {
     margin-top: 20px;
     padding: 10px;

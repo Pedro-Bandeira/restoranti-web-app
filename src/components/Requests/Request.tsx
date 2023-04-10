@@ -1,9 +1,9 @@
-import { ISolicitacoes } from "../../interfaces";
+import { IRequests } from "../../interfaces";
 import { RequestItem } from "./RequestItem"
 import './Request.css'
 
 type RequestProps = {
-    items: ISolicitacoes[];
+    items: IRequests[];
 };
 
 export const Request: React.FC<RequestProps> = ({ items }) => {

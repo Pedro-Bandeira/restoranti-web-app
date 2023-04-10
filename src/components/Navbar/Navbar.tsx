@@ -2,7 +2,18 @@ import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faUser, faClock, faBars } from '@fortawesome/free-solid-svg-icons'
 
-export const Navbar = ({ sidebarOpen, openSidebar }) => {
+type NavBarProps = {
+    sidebarOpen: boolean;
+    openSidebar: Function;
+};
+
+export const Navbar: React.FC<NavBarProps> = ({ sidebarOpen, openSidebar }) => {
+
+    // Variaveis para resgatar a rota ativa na aplicação
+    const basePath = window.location.origin;
+    const completePath = window.location.href;
+    const path = window.location.href.substring(basePath.length, completePath.length)
+
     return (
         <nav className="navbar">
             <div className="nav-icon" onClick={() => openSidebar()}>
@@ -10,9 +21,9 @@ export const Navbar = ({ sidebarOpen, openSidebar }) => {
             </div>
 
             <div className="navbar-left">
-                <a href="/">Home</a>
-                <a href="/solicitacoes" className="active-link">Solicitações</a>
-                <a href="/mesas">Mesas</a>
+                <a href="/" className={path === "/" ? "active-link" : ""}>Home</a>
+                <a href="/solicitacoes" className={path === "/solicitacoes" ? "active-link" : ""}>Solicitações</a>
+                <a href="/mesas" className={path === "/mesas" ? "active-link" : ""}>Mesas</a>
             </div>
 
             <div className="navbar-right">
