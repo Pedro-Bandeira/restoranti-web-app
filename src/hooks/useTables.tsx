@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react"
-import { IRootTable } from "../interfaces";
+import { IMesas, IRootTable } from "../interfaces";
 import { TablesService } from "../services"
 
 export const useTables = () => {
@@ -34,11 +34,18 @@ export const useTables = () => {
         if(status != 200) throw new Error();  
     }, [])
 
+    const createTable = useCallback(async (tableData: IMesas) => {
+        const { status, data } = await TablesService.createTable(tableData);
+
+        if(status != 200) throw new Error();  
+    }, [])
+
 
     return {
         tables,
         freeTablesQuantity,
         getAll,
         bookATable,
+        createTable
     }
 }

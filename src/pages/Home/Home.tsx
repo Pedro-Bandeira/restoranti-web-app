@@ -23,11 +23,11 @@ export const Home = () => {
             </div>
             <div className="request-session">
                 <h2>Quantidade de Solicitações</h2>
-                <span>{requests?.entity.length === 0 || requests?.entity === undefined ? <p>Carregando...</p> : requests?.entity.length }</span>
+                <span>{requests?.entity.length === 0 || requests?.entity === undefined ? "0" : requests?.entity.length }</span>
             </div>
             <div className="freeTables-session">
                 <h2>Quantidade de Mesas Livres</h2>
-                <span>{tables?.entity.length === 0 || tables?.entity === undefined ? <p>Carregando...</p> : tables?.entity.filter(available => available.isAvailable != false).length }</span>
+                <span>{tables?.entity.length === 0 || tables?.entity === undefined ? "0" : tables?.entity.filter(available => available.isAvailable != false).length }</span>
             </div>
         </div>
     )

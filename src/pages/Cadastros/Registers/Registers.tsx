@@ -1,6 +1,8 @@
 import './Registers.css'
 import { useUsers, useTables } from '../../../hooks'
 import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAdd, } from '@fortawesome/free-solid-svg-icons'
 
 import MUIDataTable from "MUI-Datatables";
 
@@ -49,8 +51,23 @@ export const Registers = () => {
         pollingRequests();
     }, [])
 
+
+    function callNewEmployee() {
+
+    }
+
     return(
         <div className="registers">
+            <div className="buttons-registers">
+                <a href="/cadastros/funcionarios">
+                    <i><FontAwesomeIcon icon={faAdd} /></i>
+                    Novo Funcionário
+                </a>
+                <a href="/cadastros/mesas">
+                    <i><FontAwesomeIcon icon={faAdd} /></i>
+                    Nova Mesa
+                </a>
+            </div>
             <div className="employeesArea">
                 {/* <div className="header"><span>Funcionarios</span> <a href="">Novo</a></div> */}
                 <MUIDataTable
@@ -58,6 +75,7 @@ export const Registers = () => {
                     data={users?.entity}
                     columns={columnsEmployees}
                     options={options}
+
                 />
             </div>
 

@@ -19,8 +19,12 @@ const App = () => {
       element: <Solicitacoes/>
     },
     {
-      path: "/cadastros/cadastro-mesas",
+      path: "/cadastros/mesas",
       element: <Tables />
+    },
+    {
+      path: "/cadastros/funcionarios",
+      element: <Employees />
     },
     {
       path: "/mesas",

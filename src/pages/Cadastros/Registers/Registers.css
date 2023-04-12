@@ -34,3 +34,33 @@
         width: 100%;
     }
 }
+
+.buttons-registers {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-registers > a{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #3ea175;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 0.9rem;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.buttons-registers > a:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+
+
+.buttons-registers > a > i{
+    margin-right: 5px;
+    font-weight: bolder;
+}
