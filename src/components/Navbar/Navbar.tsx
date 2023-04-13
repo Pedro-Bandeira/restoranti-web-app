@@ -27,13 +27,13 @@ export const Navbar: React.FC<NavBarProps> = ({ sidebarOpen, openSidebar }) => {
             </div>
 
             <div className="navbar-right">
-                <a href="">
+                {/* <a href="">
                     <i><FontAwesomeIcon icon={faSearch} /></i>
                 </a>
 
                 <a href="">
                     <i><FontAwesomeIcon icon={faClock} /></i>
-                </a>
+                </a> */}
 
                 <a href="">
                     <i><FontAwesomeIcon icon={faUser} /></i>

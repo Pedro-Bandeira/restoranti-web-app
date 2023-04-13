@@ -31,7 +31,7 @@ const dataServices = [
 ];
 
 const options = {
-    filterType: 'checkbox',
+    filterType: 'multiselect',
 };
   
 export const Registers = () => {

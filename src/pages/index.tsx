@@ -1,5 +1,5 @@
 export * from './Cadastros'
-export * from './Solicitacoes'
+export * from './RequestsPage'
 export * from './FreeTables'
 export * from './Home'
 export * from './CreateTagQrCode'

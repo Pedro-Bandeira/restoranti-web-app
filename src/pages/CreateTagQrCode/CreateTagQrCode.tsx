@@ -59,22 +59,6 @@ export const CreateTagQrCode = () => {
                 </div>
             </div>
 
-
-            {/* {requests.map(
-                (item, index) => 
-                <ul className='listBox'>
-                    <li className='listItem' key={item.enum}>
-                        <span>{item.name}</span>
-                        <QRCode key={item.enum} value={link} className='qrCode'/>  
-                        <div className="buttons">
-                            <button className='generateLink' onClick={() => gerarLink()}>Gerar Link</button>
-                            <button className='generateLink'>Baixar Qr Code</button>
-                        </div>
-                    </li>
-                    <p>Link Gerado: {link}</p>
-                </ul>
-            )} */}
-
             <div className="links">
                 <div className='listBox'>
                     <div className='listItem'>

@@ -1,6 +1,6 @@
 import './Home.css'
 import { useTables, useRequests } from '../../hooks'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export const Home = () => {
 

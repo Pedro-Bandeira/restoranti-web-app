@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react"
-import { IRootUser } from "../interfaces";
+import { IRootUser, IUsers } from "../interfaces";
 import { UsersService } from "../services"
 
 export const useUsers = () => {
@@ -14,8 +14,16 @@ export const useUsers = () => {
 
     }, [])
 
+
+    const createUser = useCallback(async (userData: IUsers) => {
+        const { status, data } = await UsersService.createUser(userData);
+
+        if(status != 200) throw new Error();  
+    }, [])
+
     return {
         users,
         getAllUsers,
+        createUser,
     }
 }

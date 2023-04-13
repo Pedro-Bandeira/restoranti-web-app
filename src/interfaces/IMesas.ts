@@ -1,10 +1,10 @@
 export interface IRootTable {
     hasError: boolean
     message: any
-    entity: IMesas[]
+    entity: ITables[]
   }
   
-export interface IMesas {
+export interface ITables {
     id: number
     tableNumber: number
     isAvailable: boolean

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './Solicitacoes.css'
+import './RequestsPage.css'
 import { useRequests } from '../../hooks'
 import { Request } from '../../components'
 

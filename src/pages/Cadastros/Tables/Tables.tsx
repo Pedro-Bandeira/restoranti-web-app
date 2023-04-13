@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTables } from '../../../hooks';
 import './Tables.css'
 import { useNavigate } from "react-router-dom";
-import { IMesas } from '../../../interfaces';
+import { ITables } from '../../../interfaces';
 
 export const Tables = () => {
 
@@ -21,7 +21,7 @@ export const Tables = () => {
 
   function handleTableData() {
     const date = Date.now()
-    const data: IMesas = {
+    const data: ITables = {
       id: 0,
       creationDate: new Date(date).toISOString(),
       modifiedDate: new Date(date).toISOString(),
@@ -34,7 +34,7 @@ export const Tables = () => {
   }
 
 
-  async function handleCreateTable(tableData: IMesas) {
+  async function handleCreateTable(tableData: ITables) {
     try {
       await createTable(tableData);
       alert("Mesa cadastrada com sucesso!");
@@ -50,20 +50,15 @@ export const Tables = () => {
 
   return (
     <div className="tables"> 
-      <label htmlFor="txtTableNumber">Número da Mesa: </label>
-      <input type="number" placeholder="Número da Mesa" id="txtTableNumber" value={tableNumber} onChange={handleTableNumber} />
-      <button onClick={handleTableData}>Salvar</button>
-      <button onClick={handleCancel}>Cancelar</button>
+      <h2>Cadastro de Mesas</h2>
+      <div className="tablesFields">
+        <label htmlFor="txtTableNumber">Digite o número da Mesa: </label>
+        <input type="number" placeholder="Número da Mesa" id="txtTableNumber" value={tableNumber} onChange={handleTableNumber} />
+        <div className="buttons-tables">
+          <button onClick={handleTableData}>Salvar</button>
+          <button onClick={handleCancel}>Cancelar</button>
+        </div>
+      </div>
     </div>
   )
 }
-  
-
-// {
-//   "creationDate": "2023-04-12T03:12:00.306Z",
-//   "modifiedDate": "2023-04-12T03:12:00.306Z",
-//   "id": 0,
-//   "tableNumber": 0,
-//   "isAvailable": true,
-//   "isActive": true
-// }

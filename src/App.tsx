@@ -1,6 +1,6 @@
 import './App.css'
 import { Header, Sidebar, Navbar } from './components'
-import {Solicitacoes, Employees, Servicos, Tables, FreeTables, Home, Registers, CreateTagQrCode} from './pages'
+import {Solicitacoes, Employees, Tables, FreeTables, Home, Registers, CreateTagQrCode} from './pages'
 import {
   createBrowserRouter,
   RouterProvider
