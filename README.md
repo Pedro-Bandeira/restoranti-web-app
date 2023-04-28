@@ -8,10 +8,10 @@ Para utilizar o projeto em sua maquina você deve ter instalado as dependencias 
 Essas dependencias podem ser encontradas no seguinte link: https://nodejs.org/en/download
 
 Após instalar essas dependencias você deve seguir esses passos:
->> Clonar o projeto em uma pasta de sua preferencia
->> Entrar na pasta do projeto via linha de comando ou abrir o mesmo em algum editor de texto que tenha acesso a um terminal de comandos
->> Executar o comando "npm install" para instalar todas as dependencias e bibliotecas utilizadas no projeto
->> Executar o comando "npm run dev -- --host" para colocar a aplicação online
->> Acessar o link gerado após executar o comando acima
+- Clonar o projeto em uma pasta de sua preferencia
+- Entrar na pasta do projeto via linha de comando ou abrir o mesmo em algum editor de texto que tenha acesso a um terminal de comandos
+- Executar o comando "npm install" para instalar todas as dependencias e bibliotecas utilizadas no projeto
+- Executar o comando "npm run dev -- --host" para colocar a aplicação online
+- Acessar o link gerado após executar o comando acima
 
 Vale lembrar que para os dados serem exibidos na aplicação a API deve estão funcionando antes.
