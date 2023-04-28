@@ -1,3 +1,4 @@
 export * from './IRequests'
-export * from './IMesas'
+export * from './ITables'
 export * from './IUsers'
+export * from './IAuth'

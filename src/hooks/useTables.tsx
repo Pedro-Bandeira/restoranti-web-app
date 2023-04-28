@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react"
-import { IMesas, IRootTable } from "../interfaces";
+import { ITables, IRootTable } from "../interfaces";
 import { TablesService } from "../services"
 
 export const useTables = () => {
@@ -12,12 +12,6 @@ export const useTables = () => {
         if(status != 200) throw new Error();
 
         let countFreeTables = 0;
-
-        // for (let i = 0; i < mesas.length; i++){
-        //     if (mesas == true){
-        //     countFreeTables += 1;
-        //     }
-        // }
 
         let teste = freeTablesQuantity;
         if (teste != countFreeTables){
@@ -34,8 +28,15 @@ export const useTables = () => {
         if(status != 200) throw new Error();  
     }, [])
 
-    const createTable = useCallback(async (tableData: IMesas) => {
+    const createTable = useCallback(async (tableData: ITables) => {
         const { status, data } = await TablesService.createTable(tableData);
+
+        if(status != 200) throw new Error();  
+    }, [])
+
+
+    const deleteTable = useCallback(async (tableId: number) => {
+        const { status, data } = await TablesService.deleteTable(tableId);
 
         if(status != 200) throw new Error();  
     }, [])
@@ -46,6 +47,7 @@ export const useTables = () => {
         freeTablesQuantity,
         getAll,
         bookATable,
-        createTable
+        createTable,
+        deleteTable
     }
 }

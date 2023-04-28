@@ -1,15 +1,19 @@
 import './Home.css'
-import { useTables, useRequests } from '../../hooks'
-import { useEffect } from 'react';
+import { useTables, useRequests, useAuth } from '../../hooks'
+import { useEffect, useState } from 'react';
 
 export const Home = () => {
 
     const { tables, getAll } = useTables();
     const { requests, getAllRequests } = useRequests();
+    const { getUserSigned } = useAuth();
+
+    const [nameUser, setNameUser] = useState();
 
     async function pollingRequests() {
       await getAll();
       await getAllRequests();
+      setNameUser(await getUserSigned());
     }
   
     useEffect(() => {
@@ -19,7 +23,7 @@ export const Home = () => {
     return(
         <div className="Home">
             <div className="welcome-session">
-                <span>Olá</span>, você esta usando um perfil de admin
+                <span>Olá</span>, {nameUser}
             </div>
             <div className="request-session">
                 <h2>Quantidade de Solicitações</h2>

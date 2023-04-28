@@ -1,0 +1,23 @@
+.Footer {
+    background: #020509;
+    grid-area: footer;
+    height: 50px;
+    color: #3ea175;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 20px 0px 0px;
+}
+
+.Footer h3 > i {
+    color: #FFF;
+    font-size: 12px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.Footer h3 > span {
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+}

@@ -21,9 +21,24 @@ export const useUsers = () => {
         if(status != 200) throw new Error();  
     }, [])
 
+    const editUser = useCallback(async (userData: IUsers) => {
+        const { status, data } = await UsersService.editUser(userData);
+
+        if(status != 200) throw new Error();  
+        return data
+    }, [])
+
+    const deleteUser = useCallback(async (employeeId: number) => {
+        const { status, data } = await UsersService.deleteUser(employeeId);
+
+        if(status != 200) throw new Error();  
+    }, [])
+
     return {
         users,
         getAllUsers,
         createUser,
+        deleteUser,
+        editUser,
     }
 }

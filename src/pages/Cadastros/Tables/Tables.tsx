@@ -3,6 +3,7 @@ import { useTables } from '../../../hooks';
 import './Tables.css'
 import { useNavigate } from "react-router-dom";
 import { ITables } from '../../../interfaces';
+import Table from '../../../assets/table.png'
 
 export const Tables = () => {
 
@@ -51,12 +52,19 @@ export const Tables = () => {
   return (
     <div className="tables"> 
       <h2>Cadastro de Mesas</h2>
-      <div className="tablesFields">
-        <label htmlFor="txtTableNumber">Digite o número da Mesa: </label>
-        <input type="number" placeholder="Número da Mesa" id="txtTableNumber" value={tableNumber} onChange={handleTableNumber} />
-        <div className="buttons-tables">
-          <button onClick={handleTableData}>Salvar</button>
-          <button onClick={handleCancel}>Cancelar</button>
+      <div className="tables-content">
+        <div className="tablesFields">
+          <div className="tableField">
+            <label htmlFor="txtTableNumber">Digite o número da Mesa: </label>
+            <input type="number" placeholder="Número da Mesa" id="txtTableNumber" value={tableNumber} onChange={handleTableNumber} />
+          </div>
+          <div className="buttons-tables">
+            <button onClick={handleTableData} id='save'>Salvar</button>
+            <button onClick={handleCancel} id='cancel'>Cancelar</button>
+          </div>
+        </div>
+        <div className="image-right">
+          <img src={Table} alt="" />
         </div>
       </div>
     </div>

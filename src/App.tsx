@@ -1,42 +1,58 @@
 import './App.css'
-import { Header, Sidebar, Navbar } from './components'
-import {Solicitacoes, Employees, Tables, FreeTables, Home, Registers, CreateTagQrCode} from './pages'
-import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom';
+import { Sidebar, Navbar, Footer } from './components'
+import { Solicitacoes, Employees, Tables, FreeTables, Home, Registers, CreateTagQrCode, ErrorPage } from './pages'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { useState } from 'react';
+import { ProtectedLayout } from './components/ProtectedLayout';
+import { AuthPage } from './pages/AuthPage';
 
 const App = () => {
 
   const router = createBrowserRouter([
     {
+      path: "/login",
+      element: <AuthPage />,
+      errorElement: <ErrorPage></ErrorPage>
+    },
+    {
       path: "/",
-      element: <Home />
+      element: <ProtectedLayout><Home /></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
     },
     {
       path: "/solicitacoes",
-      element: <Solicitacoes/>
+      element: <ProtectedLayout><Solicitacoes/></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
     },
     {
       path: "/cadastros/mesas",
-      element: <Tables />
+      element: <ProtectedLayout><Tables /></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
     },
     {
       path: "/cadastros/funcionarios",
-      element: <Employees />
+      element: <ProtectedLayout><Employees /></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
     },
     {
       path: "/mesas",
-      element: <FreeTables />
+      element: <ProtectedLayout><FreeTables /></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
     },
     {
       path: "/gerar-tag-qrcode",
-      element: <CreateTagQrCode />
+      element: <ProtectedLayout><CreateTagQrCode /></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
     },
     {
       path: "/cadastros",
-      element: <Registers />
+      element: <ProtectedLayout><Registers /></ProtectedLayout>,
+      errorElement: <ErrorPage></ErrorPage>
+    },
+    {
+      path: "*",
+      element: <AuthPage />,
+      errorElement: <ErrorPage></ErrorPage>
     }
   ])
 
@@ -49,13 +65,17 @@ const App = () => {
   }
 
   return (
-    <div className='container'>
-      <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
-      <Sidebar sidebarOpen={sidebarOpen} sidebarClose={closeSidebar} />
-      <div style={{gridArea: "main", padding: 20}}>
-        <RouterProvider router={router}/>
+    <>
+      <div className='container'>
+        <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+        <Sidebar sidebarOpen={sidebarOpen} sidebarClose={closeSidebar} />
+
+        <div style={{gridArea: "main", padding: 20}}>
+          <RouterProvider router={router}/>
+        </div>
+        <Footer/>
       </div>
-    </div>
+    </>
   )
 }
 

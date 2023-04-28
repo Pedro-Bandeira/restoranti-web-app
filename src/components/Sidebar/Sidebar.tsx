@@ -1,7 +1,8 @@
-import Logo from '../../assets/react.svg'
+import Logo from '../../assets/logo.png'
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faHome, faTable, faLayerGroup, faFile, faPowerOff, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { useAuth } from '../../hooks/useAuth';
 
 type SideBarProps = {
     sidebarOpen: boolean;
@@ -10,17 +11,23 @@ type SideBarProps = {
 
 export const Sidebar:React.FC<SideBarProps> = ({sidebarOpen, sidebarClose}) => { 
 
+    const {logout} = useAuth()
+
     // Variaveis para resgatar a rota ativa na aplicação
     const basePath = window.location.origin;
     const completePath = window.location.href;
     const path = window.location.href.substring(basePath.length, completePath.length)
+
+    async function handleLogout() {
+        logout();
+    }
 
     return(
         <div className={sidebarOpen ? "sidebar-responsive" : ""} id="sidebar">
             <div className="sidebar-title">
                 <div className="sidebar-img">
                     <img src={Logo} alt="logo" />
-                    <h1>Restoranti</h1>
+                    <a href="/"><h1>Restoranti</h1></a>
                 </div>
 
                 <i 
@@ -56,7 +63,7 @@ export const Sidebar:React.FC<SideBarProps> = ({sidebarOpen, sidebarClose}) => {
                 </div>   
                 <div className="sidebar-logout">
                     <i><FontAwesomeIcon icon={faPowerOff} /></i>
-                    <a href="">LogOut</a>
+                    <a onClick={() => (handleLogout())} href='/login'>LogOut</a>
                 </div>   
 
             </div>

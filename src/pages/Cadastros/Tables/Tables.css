@@ -5,52 +5,84 @@
     align-items: center;
 }
 
+.tables-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .tablesFields {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 5px 3px 3px lightgray;
+    /* box-shadow: 5px 3px 3px lightgray; */
     width: 380px;
 }
 
-.tablesFields > label {
-    margin: 15px 0px 5px 0px;
+.tableField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.tablesFields > input {
+.tableField > label {
+    margin: 15px 0px 5px 5px;
+    color: gray;
+}
+
+.tableField > input {
     border-radius: 5px;
-    padding: 3px 5px 0px 5px;
-    font-size: 0.9rem;
+    padding: 15px 5px 15px 10px;
+    font-size: 1rem;
     border: 1px solid lightgray;
     width: 300px;
-    box-shadow: 5px 3px 3px lightgray;
+    box-shadow: 5px 3px 10px lightgray;
 }
 
 .buttons-tables {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    width: 30%;
     margin: 20px;
+    gap: 20px;
 }
 
 .buttons-tables > button {
     border: none;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #3ea175;
-    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
     font-weight: bolder;
     font-size: 0.9rem;
     transition: 0.5s;
     text-decoration: none;
+    width: 300px;
+    font-size: 1rem;
+    box-shadow: 5px 3px 10px lightgray;
+    cursor: pointer;
 }
 
 .buttons-tables > button:hover{
     opacity: 80%;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 978px) {
+    .image-right {
+        display: none;
+    }
+    .tables-content {
+        align-items: center;
+    }
+    .tablesFields {
+        width: 100%;
+    }
 }

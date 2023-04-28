@@ -5,6 +5,26 @@
     justify-content: center;
 }
 
+.employees-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image-right {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-right > img {
+    width: 300px;
+}
+
 h2 {
     color: gray;
     margin-bottom: 10px;
@@ -15,38 +35,47 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 5px 3px 3px lightgray;
+    /* box-shadow: 5px 3px 3px lightgray; */
     width: 380px;
 }
 
-.fields > label {
-    margin: 15px 0px 5px 0px;
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.fields > input {
+.field > label {
+    margin: 15px 0px 5px 5px;
+    color: gray;
+}
+
+.field > input {
     border-radius: 5px;
-    padding: 3px 5px 0px 5px;
+    padding: 15px 5px 15px 10px;
     font-size: 0.9rem;
     border: 1px solid lightgray;
     width: 300px;
-    box-shadow: 5px 3px 3px lightgray;
+    box-shadow: 5px 3px 10px lightgray;
 }
 
-.fields > select {
+.field > select {
     border-radius: 5px;
-    padding: 3px 5px 0px 5px;
+    padding: 15px 5px 15px 10px;
     font-size: 0.9rem;
     border: 1px solid lightgray;
-    width: 300px;
-    box-shadow: 5px 3px 3px lightgray;
+    width: 318px;
+    box-shadow: 5px 3px 10px lightgray;
 }
 
 
 .buttons-employee {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30%;
@@ -56,17 +85,49 @@ h2 {
 
 .buttons-employee > button {
     border: none;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #3ea175;
-    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
     font-weight: bolder;
     font-size: 0.9rem;
     transition: 0.5s;
     text-decoration: none;
+    width: 300px;
+    font-size: 1rem;
+    box-shadow: 5px 3px 10px lightgray;
+    cursor: pointer;
 }
 
-.buttons-employee > button:hover{
-    opacity: 80%;
-    cursor: pointer;
+#save {
+    background-color: #3ea175;
+    color: #fff;
+}
+
+#cancel {
+    background-color: #fff;
+    color: #3ea175;
+    border: 1px solid #3ea175;
+}
+
+#save:hover{
+    background-color: #fff;
+    color: #3ea175;
+    border: 1px solid #3ea175;
+    scale: 1.05;
+}
+#cancel:hover{
+    background-color: #3ea175;
+    color: #fff;
+    scale: 1.05;
+}
+
+@media only screen and (max-width: 978px) {
+    .image-right {
+        display: none;
+    }
+    .employees-content {
+        align-items: center;
+    }
+    .fields {
+        width: 100%;
+    }
 }

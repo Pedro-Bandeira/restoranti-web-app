@@ -5,14 +5,14 @@ export interface IRootUser {
 }
 
 export interface IUsers {
-  employeeId: number
-  name: string
-  phone: string
-  email: string
-  profile: number
+  employeeId?: number
+  name?: string
+  phone?: string
+  email?: string
+  profile?: number
   username: string
-  password: string
-  confirmPassword: string
-  creationDate: string
-  modifiedDate: string
+  password?: string
+  confirmPassword?: string
+  creationDate?: string
+  modifiedDate?: string
 }

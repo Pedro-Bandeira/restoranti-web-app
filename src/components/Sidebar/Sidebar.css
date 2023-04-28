@@ -20,14 +20,19 @@
     align-items: center;
 }
 
+.sidebar-img > a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .sidebar-title > div > img {
     width: 55px;
     object-fit: contain;
     border-radius: 50%;
 }
 
-.sidebar-title > div > h1 {
-    font-size: 18px;
+.sidebar-title > div > a > h1 {
+    font-size: 24px;
     display: inline;
     margin-left: 15px;
 }
@@ -110,6 +115,7 @@
     z-index: 9999 !important;
     left: 0 !important;
     position: absolute;
+    border-radius: 0px 0px 20px 0px;
 }
 
 @media only screen and (max-width: 978px) {

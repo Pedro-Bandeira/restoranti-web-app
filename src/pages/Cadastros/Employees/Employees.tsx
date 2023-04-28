@@ -4,10 +4,12 @@ import './Employees.css'
 import { useNavigate } from "react-router-dom";
 import { IUsers } from '../../../interfaces';
 
+
+import Waiter from '../../../assets/waiter.png'
+
 export const Employees = () => {
 
   const navigate = useNavigate();
-
   
   const [userData, setUserData] = useState({
     employeeId: 0,
@@ -22,6 +24,7 @@ export const Employees = () => {
     modifiedDate: new Date().toISOString(),
   });
   const { createUser } = useUsers();
+  
 
   function handleCancel() {
     navigate("/cadastros")
@@ -67,35 +70,55 @@ export const Employees = () => {
 
   return (
     <div className="employees">
-      <h2>Cadastro de Funionários</h2>
+      <h2>Cadastro de Funcionários</h2>
 
-      <div className="fields">
-        <label htmlFor="txtNameEmployee">Nome: </label>
-        <input type="text" name="name" id="txtNameEmployee" placeholder='Nome funcionario' onChange={handleFormData}/>
+      <div className="employees-content">
+        <div className="fields">
+          <div className="field">
+            <label htmlFor="txtNameEmployee">Nome: </label>
+            <input type="text" name="name" id="txtNameEmployee" placeholder='Nome funcionario' onChange={handleFormData}/>
+          </div>
 
-        <label htmlFor="txtPhoneEmployee">Telefone: </label>
-        <input type="phone" name="phone" id="txtPhoneEmployee" placeholder='Telefone funcionario' onChange={handleFormData}/>
+          <div className="field">
+            <label htmlFor="txtPhoneEmployee">Telefone: </label>
+            <input type="phone" name="phone" id="txtPhoneEmployee" placeholder='Telefone funcionario' onChange={handleFormData}/>
+          </div>
 
-        <label htmlFor="txtEmailEmployee">Email: </label>
-        <input type="email" name="email" id="txtEmailEmployee" placeholder='Email funcionario' onChange={handleFormData}/>
+          <div className="field">
+            <label htmlFor="txtEmailEmployee">Email: </label>
+            <input type="email" name="email" id="txtEmailEmployee" placeholder='Email funcionario' onChange={handleFormData}/>
+          </div>
 
-        <label htmlFor="txtUsernameEmployee">Username: </label>
-        <input type="text" name="username" id="txtUsernameEmployee" placeholder='Username funcionario' onChange={handleFormData}/>
+          <div className="field">
+            <label htmlFor="txtUsernameEmployee">Username: </label>
+            <input type="text" name="username" id="txtUsernameEmployee" placeholder='Username funcionario' onChange={handleFormData}/>
+          </div>
 
-        <label htmlFor="txtPasswordEmployee">Senha: </label>
-        <input type="password" name="password" id="txtPasswordEmployee" placeholder='Senha' onChange={handleFormData}/>
-        <label htmlFor="txtConfirmPasswordEmployee">Confirmar Senha: </label>
-        <input type="password" name="confirmPassword" id="txtConfirmPasswordEmployee" placeholder='Confirmar senha' onChange={handleFormData}/>
+          <div className="field">
+            <label htmlFor="txtPasswordEmployee">Senha: </label>
+            <input type="password" name="password" id="txtPasswordEmployee" placeholder='Senha' onChange={handleFormData}/>
+          </div>
 
-        <label htmlFor="selectProfile">Tipo de Perfil: </label>
-        <select name="profile" id="selectProfile" onChange={handleFormData}>
-          <option value={0}>Admin</option>
-          <option value={1}>Funcionário</option>
-        </select>
+          <div className="field">
+            <label htmlFor="txtConfirmPasswordEmployee">Confirmar Senha: </label>
+            <input type="password" name="confirmPassword" id="txtConfirmPasswordEmployee" placeholder='Confirmar senha' onChange={handleFormData}/>
+          </div>
 
-        <div className="buttons-employee">
-          <button onClick={handleJson}>Salvar</button>
-          <button onClick={handleCancel}>Cancelar</button>
+          <div className="field">
+            <label htmlFor="selectProfile">Tipo de Perfil: </label>
+            <select name="profile" id="selectProfile" onChange={handleFormData}>
+              <option value={0}>Admin</option>
+              <option value={1}>Funcionário</option>
+            </select>
+          </div>
+
+          <div className="buttons-employee">
+            <button onClick={handleJson} id='save'>SALVAR</button>
+            <button onClick={handleCancel} id='cancel'>CANCELAR</button>
+          </div>
+        </div>
+        <div className="image-right">
+          <img src={Waiter} alt="" />
         </div>
       </div>
     </div>

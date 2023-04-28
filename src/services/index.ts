@@ -1,3 +1,5 @@
 export * from './RequestsService'
 export * from './TablesService'
 export * from './UsersService'
+export * from './AuthService'
+export * from './AuthService'

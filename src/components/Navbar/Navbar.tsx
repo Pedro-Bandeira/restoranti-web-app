@@ -1,6 +1,6 @@
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faUser, faClock, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faBars } from '@fortawesome/free-solid-svg-icons'
 
 type NavBarProps = {
     sidebarOpen: boolean;
@@ -27,14 +27,6 @@ export const Navbar: React.FC<NavBarProps> = ({ sidebarOpen, openSidebar }) => {
             </div>
 
             <div className="navbar-right">
-                {/* <a href="">
-                    <i><FontAwesomeIcon icon={faSearch} /></i>
-                </a>
-
-                <a href="">
-                    <i><FontAwesomeIcon icon={faClock} /></i>
-                </a> */}
-
                 <a href="">
                     <i><FontAwesomeIcon icon={faUser} /></i>
                 </a>

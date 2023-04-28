@@ -1,10 +1,10 @@
 import './TablesList.css'
 
 import { TableItem } from './TableItem'
-import { IMesas } from "../../interfaces";
+import { ITables } from "../../interfaces";
 
 type TablesProps = {
-    items: IMesas[];
+    items: ITables[];
 };
 
 export const TablesList: React.FC<TablesProps> = ({ items }) => {
