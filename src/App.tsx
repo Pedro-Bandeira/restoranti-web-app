@@ -67,7 +67,7 @@ const App = () => {
   return (
     <>
       <div className='container'>
-        <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+        <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} sidebarClose={closeSidebar} />
         <Sidebar sidebarOpen={sidebarOpen} sidebarClose={closeSidebar} />
 
         <div style={{gridArea: "main", padding: 20}}>

@@ -13,7 +13,10 @@ export const Home = () => {
     async function pollingRequests() {
       await getAll();
       await getAllRequests();
-      setNameUser(await getUserSigned());
+      const userSigned = await getUserSigned();
+      if(userSigned){
+        setNameUser(userSigned.name);
+      }
     }
   
     useEffect(() => {

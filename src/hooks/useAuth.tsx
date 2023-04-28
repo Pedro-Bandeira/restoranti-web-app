@@ -28,7 +28,9 @@ export const useAuth = () => {
 
     async function getUserSigned() {
         const response = AuthService.getUserLocalStorage();
-        return response.name;
+        if(response != null){
+            return {name: response.name, username: response.username};
+        }
     }
 
     async function logout() {

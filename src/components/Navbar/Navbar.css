@@ -52,6 +52,27 @@
     padding: 7px;
 }
 
+.userInfo {
+    display: inline !important;
+    z-index: 9999 !important;
+    right: 0 !important;
+    margin-right: 10px;
+    top: 60px;
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    background-color: #020509;
+    height: 100px;
+    width: 200px;
+    color: #FFF;
+    padding: 20px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.userData {
+    margin-left: 10px;
+}
+
 @media only screen and (max-width: 978px) {
     .nav-icon {
         display: inline;

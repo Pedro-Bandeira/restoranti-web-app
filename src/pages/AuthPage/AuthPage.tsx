@@ -47,7 +47,7 @@ export const AuthPage = () => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
@@ -58,12 +58,12 @@ export const AuthPage = () => {
     }
 
     onFinish(user)
-    location.reload();
+    //location.reload();
   };
 
   async function onFinish(values: {username: string, password: string, confirmpassword: string}) {
     try{
-      const response = authenticate(values.username, values.password, values.confirmpassword)
+      const response = authenticate(values.username, values.password, values.confirmpassword).finally(() => location.reload())
     }
     catch (error) {
       console.log(error)
@@ -110,10 +110,6 @@ export const AuthPage = () => {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Manter Login"
-              />
               <Button
                 type="submit"
                 fullWidth
@@ -123,7 +119,7 @@ export const AuthPage = () => {
               >
                 ENTRAR
               </Button>
-              <Grid container>
+              {/* <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
                     Esqueceu a senha?
@@ -134,7 +130,7 @@ export const AuthPage = () => {
                     {"Não possuí acesso? Clique aqui!"}
                   </Link>
                 </Grid>
-              </Grid>
+              </Grid> */}
             </Box>
           </Box>
           <Copyright sx={{ mt: 8, mb: 4 }} />
