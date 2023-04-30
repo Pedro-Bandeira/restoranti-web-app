@@ -34,7 +34,7 @@ export const RequestItem: React.FC<RequestItemsProps> = ({tableNumber, type, req
         }
         catch(event){
             console.log(event)
-            alert("Ocorreu um erro ao confirmar a solicitação, verifique o Id e tente novamente!")
+            alert("Ocorreu um erro ao confirmar a solicitação, tente novamente!")
         }
         
         

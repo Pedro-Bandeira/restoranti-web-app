@@ -64,7 +64,7 @@ export const Registers = () => {
     }
 
 
-    function handleDelete(type: number, itemId: number) {
+    function handleDelete(type: number, itemId: number, tablenumer?: number) {
         //Type = 0 : Deleta funcionario
         //Type = 1 : Deleta Mesa
         if(type == 0){
@@ -82,11 +82,11 @@ export const Registers = () => {
             }
         }
         else if (type == 1) {
-            var r=confirm("Tem certeza que deseja deletar a mesa " + itemId + "?");
+            var r=confirm("Tem certeza que deseja deletar a mesa " + tablenumer + "?");
             if (r==true)
             {
                 deleteTable(itemId)
-                alert('Mesa (' + itemId + ') foi deletada')
+                alert('Mesa (' + tablenumer + ') foi deletada')
             }
         }
         pollingRequests()
@@ -140,7 +140,22 @@ export const Registers = () => {
     }
 
 
+    // function formatDate(date: string) {
+    //     let teste = (Moment(date).format('DD-MMM-YYYY HH:mm:ss'))
+    //     return teste
+    // }
 
+    function formatDate(date: Date) {
+        const formatter = Intl.DateTimeFormat('pt-BR', {
+            dateStyle: "short"
+        })
+
+        let dataString = String(date).substring(0, 10)
+        const correctDate = new Date(dataString)
+
+        return formatter.format(correctDate) 
+    }
+    
 
     return(
         <div className="registers">
@@ -181,7 +196,7 @@ export const Registers = () => {
                             <TableCell align="left">{row.employeeId}</TableCell>
                             <TableCell align="left">{row.name}</TableCell>
                             <TableCell align="left">{row.phone}</TableCell>
-                            <TableCell align="left">{row.creationDate}</TableCell>
+                            <TableCell align="left">{formatDate(row.creationDate)}</TableCell>
                             <TableCell align="center">
                                 <button className='buttonRow' onClick={() => handleOpenModal(Number(row.employeeId))}>
                                     <i><FontAwesomeIcon icon={faEdit} /></i>
@@ -220,9 +235,9 @@ export const Registers = () => {
                             {tables?.entity.map((row) => (
                                 <TableRow key={row.id}>
                                 <TableCell component="th" scope="row">{row.tableNumber}</TableCell>
-                                <TableCell align="left">{row.creationDate}</TableCell>
+                                <TableCell align="left">{formatDate(row.creationDate)}</TableCell>
                                 <TableCell align="center">
-                                    <button className='buttonRow' id='deleteButton' onClick={() => (handleDelete(1, row.id))}>
+                                    <button className='buttonRow' id='deleteButton' onClick={() => (handleDelete(1, row.id, row.tableNumber))}>
                                         <i><FontAwesomeIcon icon={faTrash} /></i>
                                     </button>
                                 </TableCell>

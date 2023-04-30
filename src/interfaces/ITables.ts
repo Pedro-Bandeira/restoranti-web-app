@@ -9,6 +9,6 @@ export interface ITables {
     tableNumber: number
     isAvailable: boolean
     isActive: boolean
-    creationDate: string
+    creationDate: Date
     modifiedDate: any
 }
